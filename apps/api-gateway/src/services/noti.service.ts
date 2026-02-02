@@ -1,5 +1,5 @@
 import { NotiChannel, NotiPriority, NotiCategory, notiRepo } from "@notipilot/database"
-import { notificationQueue } from "@notipilot/shared"
+import { notiQueue } from "@notipilot/shared"
 
 interface EnqueueNotificationInput {
     channel: NotiChannel;
@@ -11,7 +11,7 @@ interface EnqueueNotificationInput {
 export const notiService = {
     async enqueueNotification(input: EnqueueNotificationInput) {
         const notification = await notiRepo.create(input)
-        await notificationQueue.add("deliver", {
+        await notiQueue.add("deliver", {
             notificationId: notification._id.toString()
         });
         return notification;

@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
       "@notipilot/database": ["../../packages/database/src"],
@@ -7,6 +12,7 @@
     }
   },
   "references": [
-    { "path": "../../packages/database" }
+    { "path": "../../packages/database" },
+    {"path": "../../packages/shared"}
   ]
 }
