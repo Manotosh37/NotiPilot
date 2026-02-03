@@ -1,5 +1,5 @@
 {
-  "name": "@notipilot/shared",
+  "name": "@notipilot/api-gateway",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -7,5 +7,8 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
   }
 }

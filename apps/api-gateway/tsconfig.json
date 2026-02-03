@@ -5,6 +5,8 @@
     "declarationMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@notipilot/database": ["../../packages/database/src"],

@@ -1,8 +1,13 @@
-import express, { Request, Response } from "express"
+import { Request, Response } from "express"
+import { notiService } from "src/services/noti.service";
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.get("/notification", (req: Request, res: Response) => {
-    res.status(
-})
+export async function createNotification( req: Request, res: Response) {
+    const { channel, payload, priority, category } = req.body;
+    const notification = await notiService.enqueueNotification({
+        channel,
+        payload,
+        priority,
+        category
+    });
+    res.status(202).json(notification);
+}
