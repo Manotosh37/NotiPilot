@@ -1,5 +1,5 @@
 import { Worker } from "bullmq"
-import { QUEUE_NAME, bullmqConnection } from "@Notipilot/packages/shared"
+import { QUEUE_NAME, bullmqConnection } from "@notipilot/shared"
 
 new Worker("notifications", async (job) => {
     console.log(job.data.notificationId)
