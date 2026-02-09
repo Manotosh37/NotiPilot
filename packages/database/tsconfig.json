@@ -1,14 +1,14 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
     "declaration": true,
     "declarationMap": true,
     "rootDir": "./src",
     "outDir": "./dist"
-    // ...other options
   },
+  "include": ["src"],
   "references": [
-    { "path": "../../packages/shared" },
-    { "path": "../../packages/database" }
+    { "path": "../shared" }
   ]
 }
