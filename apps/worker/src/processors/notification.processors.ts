@@ -1,5 +1,4 @@
-import { notiRepo } from "@notipilot/database"
-import { notiChannel } from "@notipilot/database"
+import { notiRepo, notiChannel } from "@notipilot/database"
 
 export async function processNotification(notificationId: string) {
     const notification = await notiRepo.getById(notificationId)
