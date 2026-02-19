@@ -9,7 +9,8 @@
     }
   },
   "dependencies": {
-    "@notipilot/shared": "workspace:*"
+    "@notipilot/shared": "workspace:*",
+    "@notipilot/database": "workspace*"
   },
   "devDependencies": {
     "@types/express": "^5.0.6"
