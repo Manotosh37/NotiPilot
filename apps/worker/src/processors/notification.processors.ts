@@ -1,6 +1,7 @@
-import { notiRepo } from "@notipilot/database"
-import { NotiChannel } from "@notipilot/database"
+import { notiRepo, NotiChannel } from "@notipilot/database"
 import { sendEmail } from "../providers/email.provider";
+
+const MAX_RETRY = 2
 
 export async function processNotification(notificationId: string) {
     const notification = await notiRepo.getById(notificationId)
@@ -22,7 +23,11 @@ export async function processNotification(notificationId: string) {
             await notiRepo.markAsSent(notificationId) }
 
         catch (error) {
+            const nextRetryCount = notification.retryCount + 1;
             await notiRepo.incrementRetry(notificationId)
+            if (nextRetryCount >= MAX_RETRY) {
+            await notiRepo.markAsFailed(notificationId)
+            return; }
             await notiRepo.markAsFailed(notificationId)
             throw error}
     } 
