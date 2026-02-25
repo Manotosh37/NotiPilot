@@ -1,3 +1,5 @@
+import { pino } from pino
+
 type Loglevel = "info" | "warn" | "error"; 
 
 export const logger = {

@@ -10,9 +10,8 @@
     "noEmit": false,
     "baseUrl": ".",
     "paths": {
-      "@notipilot/database": ["packages/shared/src/index.ts"],
-      "@notipilot/shared": ["packages/shared/src/index.ts"]
+      "@notipilot/database": ["packages/database/src/"],
+      "@notipilot/shared": ["packages/shared/src/"]
     }
   }
 }
-
